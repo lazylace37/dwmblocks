@@ -1,5 +1,5 @@
 /* macro for conveniently specifying pathu and pathc below */
-#define PATH(name)                      "<path to the folder containing block scripts>/"name
+#define PATH(name)                      "/home/gioele/.local/bin/dwmblocks/"name
 
 /* buffer size for capturing output of the programs used for updating blocks */
 #define CMDOUTLENGTH                    50
@@ -17,7 +17,7 @@
 
 /* delimiter specified as an array of characters
  * (don't remove DELIMITERENDCHAR at the end) */
-static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
+static const char delimiter[] = { ' ', '|', ' ', DELIMITERENDCHAR };
 
 #include "block.h"
 
@@ -43,9 +43,10 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("calendar.sh"),          NULL,                           30,             1},
-        { PATH("volume.sh"),            PATH("volume_button.sh"),       0,              2},
-        { PATH("cpu_temp.sh"),          PATH("cpu_temp_button.sh"),     1,              4},
-        { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3},
+        { PATH("st_media.sh"),          PATH("st_media_toggle.sh"),     1,              1},
+        { PATH("st_volume.sh"),         PATH("st_volume_button.sh"),    0,              8},
+        { PATH("st_net.sh"),            PATH("st_net_button.sh"),       5,              2},
+        { PATH("st_battery.sh"),        NULL,                           30,             0},
+        { PATH("st_calendar.sh"),       NULL,                           10,             0},
         { NULL } /* just to mark the end of the array */
 };
